@@ -32,9 +32,7 @@ fetch('https://api.escuelajs.co/api/v1/users')
             const btnDelete = document.querySelectorAll('.delete')
 
             btnDelete.forEach((btn, index) => {
-                btn.onclick = (event) => {
-                    // console.log(event.target.parentNode.parentNode.id);
-                    // console.log(event.target.parentElement.parentElement.id);
+                btn.onclick = () => {
                     array = array.filter((user, i) => i !== index);
                     console.log(array);
                     console.log(index);
