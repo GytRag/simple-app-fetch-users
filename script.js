@@ -4,12 +4,13 @@ fetch('https://api.escuelajs.co/api/v1/users')
     .then(res => res.json())
     .then(users => {
 
-        function updateHTML(){
-            let array = users;
-            console.log(array);
 
-            function showCards(){
-                body.innerHTML ='';
+        let array = users;
+        console.log(array);
+
+        function updateHTML() {
+            function showCards() {
+                body.innerHTML = '';
                 array.forEach(user => {
                     body.innerHTML += `
                  <div class="card" id="${user.id}">
@@ -25,6 +26,7 @@ fetch('https://api.escuelajs.co/api/v1/users')
             `
                 })
             }
+
             showCards()
 
             const btnDelete = document.querySelectorAll('.delete')
@@ -37,9 +39,11 @@ fetch('https://api.escuelajs.co/api/v1/users')
                     console.log(array);
                     console.log(index);
                     showCards()
+                    updateHTML();
                 }
             })
         }
-       updateHTML();
+
+        updateHTML();
 
     })
